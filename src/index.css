@@ -8,8 +8,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b2838; /* Cor de fundo principal da Steam */
-  color: #c7d5e0; /* Cor de texto clara */
+  /* Cor de fundo principal alterada para grafite */
+  background-color: #212529;
+  color: #B8D8E8; /* Cor de texto clara */
 }
 
 code {

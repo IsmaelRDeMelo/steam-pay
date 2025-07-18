@@ -1,19 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Cores atualizadas
+const darkBlue = '#0A4D68';
+const graphiteDark = '#2a2f36';
+const footerText = '#8f98a0';
+
 const FooterContainer = styled.footer`
-  background: #171a21;
-  color: #8f98a0;
+  background: ${graphiteDark};
+  color: ${footerText};
   padding: 24px;
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid #3a3f4b;
+  border-top: 1px solid #31363f;
 `;
 
 const FooterLink = styled.a`
-  color: #66c0f4;
+  color: ${darkBlue};
   text-decoration: none;
   margin: 0 10px;
+  font-weight: bold;
 
   &:hover {
     text-decoration: underline;

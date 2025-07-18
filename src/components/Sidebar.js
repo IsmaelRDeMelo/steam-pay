@@ -3,39 +3,51 @@ import { Drawer, Menu } from 'antd';
 import { QuestionCircleOutlined, BugOutlined, LockOutlined, SolutionOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
+// Cores atualizadas
+const darkBlue = '#0A4D68';
+const lightBlueText = '#B8D8E8';
+const graphiteDark = '#2a2f36';
+const graphiteLight = '#31363f';
+
 const StyledDrawer = styled(Drawer)`
   .ant-drawer-body {
     padding: 0;
-    background: #171a21;
+    background: ${graphiteDark};
   }
   .ant-drawer-header {
-    background: #171a21;
-    border-bottom: 1px solid #3a3f4b;
+    background: ${graphiteDark};
+    border-bottom: 1px solid ${graphiteLight};
   }
   .ant-drawer-title, .ant-drawer-close {
-    color: #c7d5e0;
+    color: ${lightBlueText};
   }
 `;
 
 const StyledMenu = styled(Menu)`
-  background: #171a21;
+  background: ${graphiteDark};
   border-right: none;
   padding: 16px 0;
 
   .ant-menu-item {
-    color: #c7d5e0;
+    color: ${lightBlueText};
     font-size: 16px;
     margin: 8px 0 !important;
     
+    .ant-menu-item-icon {
+      color: ${darkBlue};
+    }
+
     &:hover {
       color: #fff;
+      background-color: ${graphiteLight} !important;
     }
     
     &.ant-menu-item-selected {
-      background-color: rgba(102, 192, 244, 0.2) !important;
-      color: #66c0f4;
+      background-color: ${graphiteLight} !important;
+      color: #fff;
+      font-weight: bold;
       &::after {
-        border-right: 3px solid #66c0f4;
+        border-right: 3px solid ${darkBlue};
       }
     }
   }
@@ -50,7 +62,7 @@ const Sidebar = ({ visible, onClose }) => {
       open={visible}
       width={280}
     >
-      <StyledMenu mode="inline" defaultSelectedKeys={['1']}>
+      <StyledMenu mode="inline">
         <Menu.Item key="1" icon={<InfoCircleOutlined />}>
           O que é o SteamPay?
         </Menu.Item>

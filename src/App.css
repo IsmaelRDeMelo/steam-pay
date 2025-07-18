@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #1b2838;
+  /* Cor de fundo alterada para grafite */
+  background: #212529;
 }
 
 .main-content {
@@ -13,9 +14,13 @@
 
 .content-area {
   flex-grow: 1;
-  padding: 24px;
+  padding: 0; /* Padding movido para o GameGrid para o background ocupar tudo */
   transition: margin-left 0.3s ease-in-out;
-  overflow-y: auto; /* Garante que o conteúdo role, não a página inteira */
+  overflow-y: auto;
+  
+  /* NOVO: Fundo com textura grafite */
+  background-color: #2c2c2c; /* Cor de base */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/G4eaFWkoPBASoIa1ir_whHhUtVm_Hveh_wVMAk/sciw/hKK+s6S4SVSwu3U7VABVDnAvElO5Ymb09BDB04eDcihbFgg3GV+OPhwH6gVkvmfhEkoCARTKpEYgpGKNclAesAI6iQb+IY8NQ0Qpvc8YGh+8J6GzJeVLkaR8HpFRN4NDqE/0zBCBY4hgegzRg/R9U2biTaGnMCGDptU3dG2jYpInBPnzl3JUO74oD1RpeFPfU2/tYNgpSinA/CjBW1kbZzKMXS3rNpeJyVf/xW+j3YCi1Ia4NrqzhH2Fk5TKVYpbKkN8F4EhzflvprrKCsDIEcIZggVf8_AFbarKAp6gLi1aUnZN2kooDZSlMc3_BCBbyyA6gVinhCaoxVTBAYhQZMWFPBHlnKO4HgcJMax3IEW3LCs0zxW1g8Pnhr0SgH0uI4ll/7y8_fR2NOgmN3_sg_0k9g9GgggR3SPcJ5Ag8BCs5UL3gI4Jdae_K4kY_yhXHgCKFNhGHLX9g04ADe9BveSywce_K7kY_xHAYA9nZ0kfrj4_Y2gJkPkK1HhVRUoPaumoeGRoAAg2AlKKC4Yj2O3sbI4iAobnQN2bPz9AgARfT6+DrF1_gAAAAASUVORK5CYII=');
 }
 
 .content-area.sidebar-open {

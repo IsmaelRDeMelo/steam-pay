@@ -7,9 +7,13 @@ import paydvImg from '../assets/paydv.jpg';
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Alterado para sempre ter 2 colunas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   padding: 24px;
+  /* Adicionado para centralizar o grid em telas maiores */
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
 const gamesData = [

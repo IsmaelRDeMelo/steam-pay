@@ -3,8 +3,14 @@ import styled from 'styled-components';
 import { UserOutlined, SettingOutlined, HomeOutlined, MenuOutlined } from '@ant-design/icons';
 import { Popover, Avatar, Button } from 'antd';
 
+// Cores atualizadas
+const darkBlue = '#0A4D68';
+const lightBlueText = '#B8D8E8';
+const graphiteDark = '#2a2f36';
+const graphiteLight = '#31363f';
+
 const HeaderContainer = styled.header`
-  background: #171a21;
+  background: ${graphiteDark};
   padding: 0 24px;
   display: flex;
   align-items: center;
@@ -24,29 +30,22 @@ const LogoContainer = styled.div`
 const MenuButton = styled(Button)`
   background: transparent;
   border: none;
-  color: #66c0f4;
+  color: ${darkBlue};
   font-size: 24px;
   margin-right: 16px;
   &:hover {
-    color: #fff;
+    color: ${lightBlueText};
     background: transparent !important;
   }
 `;
 
 const Logo = styled.h1`
   font-family: 'Motiva Sans', sans-serif;
-  color: #66c0f4;
-  font-size: 24px;
+  color: ${lightBlueText};
+  font-size: 28px; /* Título um pouco maior */
   font-weight: 700;
   margin: 0;
   cursor: pointer;
-  span {
-    font-weight: 400;
-    font-size: 14px;
-    color: #c7d5e0;
-    display: block;
-    margin-top: -5px;
-  }
 `;
 
 const NavMenu = styled.div`
@@ -56,7 +55,7 @@ const NavMenu = styled.div`
 `;
 
 const NavButton = styled.a`
-  color: #c7d5e0;
+  color: ${lightBlueText};
   text-decoration: none;
   font-size: 16px;
   display: flex;
@@ -67,7 +66,7 @@ const NavButton = styled.a`
   transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    background-color: rgba(102, 192, 244, 0.2);
+    background-color: ${graphiteLight};
     color: #fff;
   }
 `;
@@ -85,9 +84,9 @@ const UserInfo = styled.div`
     color: #fff;
     font-weight: 500;
   }
-  .group {
+  .email { /* Alterado de .group para .email */
     font-size: 12px;
-    color: #66c0f4;
+    color: ${lightBlueText};
   }
 `;
 
@@ -98,7 +97,7 @@ const user = {
 };
 
 const UserContent = (
-  <div style={{ padding: '8px' }}>
+  <div style={{ padding: '8px', backgroundColor: graphiteLight, color: lightBlueText }}>
     <p><strong>Email:</strong> {user.email}</p>
     <p><strong>Grupo:</strong> {user.group}</p>
   </div>
@@ -108,10 +107,8 @@ const AppHeader = ({ onMenuClick }) => (
   <HeaderContainer>
     <LogoContainer>
       <MenuButton icon={<MenuOutlined />} onClick={onMenuClick} />
-      <Logo>
-        SteamPay
-        <span>uma plataforma feita por associados, para associados</span>
-      </Logo>
+      {/* Subtítulo removido */}
+      <Logo>SteamPay</Logo>
     </LogoContainer>
     <NavMenu>
       <NavButton href="#"><HomeOutlined /> Home</NavButton>
@@ -119,12 +116,13 @@ const AppHeader = ({ onMenuClick }) => (
       <NavButton href="#"><SettingOutlined /> Configurações</NavButton>
       <Popover content={UserContent} title={user.name} trigger="hover">
         <UserProfile>
-          <Avatar size="large" style={{ backgroundColor: '#66c0f4' }}>
+          <Avatar size="large" style={{ backgroundColor: darkBlue }}>
             {user.name.charAt(0)}
           </Avatar>
           <UserInfo>
             <div className="name">{user.name}</div>
-            <div className="group">{user.group}</div>
+            {/* Exibindo o email ao invés do grupo */}
+            <div className="email">{user.email}</div>
           </UserInfo>
         </UserProfile>
       </Popover>

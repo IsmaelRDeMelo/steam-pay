@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Cores atualizadas
+const darkBlue = '#0A4D68';
+const graphiteLight = '#31363f';
+const lightBlueText = '#B8D8E8';
+
 const CardWrapper = styled.div`
-  background: #1a2430;
+  background: ${graphiteLight};
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -13,7 +18,7 @@ const CardWrapper = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(102, 192, 244, 0.3);
+    box-shadow: 0 8px 25px rgba(10, 77, 104, 0.5);
   }
 `;
 
@@ -21,7 +26,7 @@ const CardImage = styled.img`
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 4px solid #66c0f4;
+  border-bottom: 4px solid ${darkBlue};
 `;
 
 const CardContent = styled.div`
@@ -33,14 +38,14 @@ const CardContent = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  color: #c7d5e0;
+  color: ${lightBlueText};
   margin: 0 0 16px 0;
   font-size: 18px;
   font-family: 'Motiva Sans', sans-serif;
 `;
 
 const AccessButton = styled.button`
-  background: linear-gradient(to right, #66c0f4, #4a90e2);
+  background: ${darkBlue};
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -48,15 +53,14 @@ const AccessButton = styled.button`
   font-weight: bold;
   border-radius: 3px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   align-self: flex-start;
 
   &:hover {
-    background: linear-gradient(to right, #79d0f7, #5c9eee);
-    box-shadow: 0 0 10px rgba(102, 192, 244, 0.5);
+    background-color: #0d6a8f;
+    box-shadow: 0 0 10px rgba(10, 77, 104, 0.7);
   }
 `;
-
 
 const GameCard = ({ title, image }) => (
   <CardWrapper>
