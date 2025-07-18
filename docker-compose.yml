@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  steampay-app:
+    build: .
+    container_name: steampay_frontend
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development

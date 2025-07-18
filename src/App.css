@@ -1,0 +1,23 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #1b2838;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  position: relative; /* Para o posicionamento do Sidebar */
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 24px;
+  transition: margin-left 0.3s ease-in-out;
+  overflow-y: auto; /* Garante que o conteúdo role, não a página inteira */
+}
+
+.content-area.sidebar-open {
+  margin-left: 280px; /* Mesma largura do Sidebar */
+}
